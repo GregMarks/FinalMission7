@@ -33,7 +33,7 @@ namespace FinalMission7
                options.UseSqlite(Configuration["ConnectionStrings:BookDBConnection"]);
 
            });
-
+            services.AddRazorPages();
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
         }
 
@@ -51,6 +51,18 @@ namespace FinalMission7
 
             app.UseEndpoints(endpoints =>
             {
+
+
+                endpoints.MapControllerRoute("categorypage",
+                    "{Category}/Page{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("type",
+                    "{Category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+
+
+
                 endpoints.MapControllerRoute(
                     name: "Paging",
                     pattern: "Page{pageNum}",
