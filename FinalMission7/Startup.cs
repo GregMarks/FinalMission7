@@ -51,6 +51,21 @@ namespace FinalMission7
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("categorypage",
+                    "{Category}/Page{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute(
+                    name: "Paging",
+                    pattern: "{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index", pageNum = 1 });
+
+                endpoints.MapControllerRoute("type",
+                    "{type}",
+                    new { Controller = "Home", Action = "Index", pageNum = 1 });
+
+
+
                 endpoints.MapDefaultControllerRoute();
             });
         }
