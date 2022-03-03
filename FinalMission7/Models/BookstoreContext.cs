@@ -1,4 +1,5 @@
 ﻿using System;
+using FinalMission7.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -20,5 +21,6 @@ namespace FinalMission7.models
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Purchase> Purchase { get; set; }
     }
 }
