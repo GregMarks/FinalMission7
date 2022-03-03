@@ -35,6 +35,10 @@ namespace FinalMission7
            });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +50,7 @@ namespace FinalMission7
             }
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
@@ -67,6 +71,8 @@ namespace FinalMission7
 
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
         }
     }
