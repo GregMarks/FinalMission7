@@ -1,5 +1,5 @@
 ﻿using FinalMission7.Infrastructure;
-using FinalMission7.models;
+using FinalMission7.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;

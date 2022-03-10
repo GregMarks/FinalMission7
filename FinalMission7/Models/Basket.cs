@@ -1,4 +1,4 @@
-﻿using FinalMission7.models;
+﻿using FinalMission7.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

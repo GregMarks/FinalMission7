@@ -1,4 +1,4 @@
-﻿using FinalMission7.models;
+﻿using FinalMission7.Models;
 using FinalMission7.Models;
 using FinalMission7.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
