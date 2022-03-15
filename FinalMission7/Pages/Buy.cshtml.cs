@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalMission7.Infrastructure;
 using FinalMission7.Models;
-using FinalMission7.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

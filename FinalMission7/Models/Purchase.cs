@@ -11,7 +11,7 @@ namespace FinalMission7.Models
     {
         [Key]
         [BindNever]
-        public int DonationId { get; set; }
+        public int PurchaseId { get; set; }
         [BindNever]
         public ICollection<BasketLineItem> Lines { get; set; }
         [Required(ErrorMessage = "Please enter a name:")]
@@ -28,5 +28,7 @@ namespace FinalMission7.Models
         [Required(ErrorMessage = "Please enter a country:")]
         public string Country { get; set; }
         public bool Anonymous { get; set; }
+        [BindNever]
+        public bool PurchaseReceived { get; set; }
     }
 }

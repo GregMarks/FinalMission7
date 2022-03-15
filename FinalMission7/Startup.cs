@@ -1,5 +1,4 @@
 using FinalMission7.Models;
-using FinalMission7.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -70,7 +69,7 @@ namespace FinalMission7
                     defaults: new { Controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute("type",
-                    "{type}",
+                    "{type}", //I think this might be the issue. Does it need to be Category? When I changed it, everything broke... When I changed it back it still didn't want to run...
                     new { Controller = "Home", Action = "Index", pageNum = 1 });
 
 

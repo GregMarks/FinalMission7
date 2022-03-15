@@ -19,7 +19,7 @@ namespace FinalMission7.Models
         {
             context.AttachRange(purchase.Lines.Select(x => x.Book));
 
-            if (purchase.DonationId == 0)
+            if (purchase.PurchaseId == 0)
             {
                 context.Purchase.Add(purchase);
             }
