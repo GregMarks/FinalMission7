@@ -69,7 +69,7 @@
     public string GetDetailsUrl(long id) => $"/admin/books/details/{id}";
     public string GetEditUrl(long id) => $"/admin/books/edit/{id}";
 
-    public async Task RemoveProject (Book b)
+    public async Task RemoveBook (Book b)
     {
         repo.DeleteBook(b);
         await UpdateData();

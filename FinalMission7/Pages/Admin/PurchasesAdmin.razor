@@ -1,18 +1,20 @@
-﻿@page "/admin/purchases"
+﻿@page "/admin/test"
 @inherits OwningComponentBase<IPurchaseRepository>
 
-<PurchasesTable TableTitle="Uncollected Purchases" Purchases="UncollectedPurchases" ButtonLabel="Collected" PurchaseSelected="CollectPurchase"></PurchasesTable>
+<PurchaseTable TableTitle="UncollectedPurchases" Purchases="UncollectedPurchases" 
+               ButtonLabel="Collected" PurchaseSelected="CollectPurchase"></PurchaseTable>
 
-<PurchasesTable TableTitle="Collected Purchases" Purchases="CollectedPurchases" ButtonLabel="Reset" PurchaseSelected="ResetPurchase"></PurchasesTable>
+<PurchaseTable TableTitle="CollectedPurchases" Purchases="CollectedPurchases" 
+               ButtonLabel="Reset" PurchaseSelected="ResetPurchase"></PurchaseTable>
+
 
 <button class="btn btn-info" @onclick="@(x => UpdateData())">Refresh Data</button>
 
 @code {
     public IPurchaseRepository repo => Service;
-    <!--Inside the carrots below is different than the videos because I thought it might help me get a more direct reference.-->
-    public IEnumerable<Models.Purchase> AllPurchases { get; set; }
-    public IEnumerable<Models.Purchase> UncollectedPurchases { get; set; }
-    public IEnumerable<Models.Purchase> CollectedPurchases { get; set; }
+    public IEnumerable<Purchase> AllPurchases { get; set; }
+    public IEnumerable<Purchase> UncollectedPurchases { get; set; }
+    public IEnumerable<Purchase> CollectedPurchases { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
@@ -29,7 +31,7 @@
     public void CollectPurchase(int id) => UpdatePurchase(id, true);
     public void ResetPurchase(int id) => UpdatePurchase(id, false);
 
-    private void UpdatePurchase (int id, bool purchased)
+    private void UpdatePurchase(int id, bool purchased)
     {
         Purchase p = repo.Purchases.FirstOrDefault(x => x.PurchaseId == id);
         p.PurchaseReceived = purchased;

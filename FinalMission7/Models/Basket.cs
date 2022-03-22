@@ -14,7 +14,7 @@ namespace FinalMission7.Models
         public virtual void AddItem (Book book, int qty)
         {
             BasketLineItem line = Items
-                .Where(b => b.Book.Isbn == book.Isbn)
+                .Where(b => b.Book.BookId == book.BookId)
                 .FirstOrDefault();
 
             if (line == null)
@@ -34,7 +34,7 @@ namespace FinalMission7.Models
 
         public virtual void RemoveItem (Book book)
         {
-            Items.RemoveAll(x => x.Book.Isbn == book.Isbn);
+            Items.RemoveAll(x => x.Book.BookId == book.BookId);
         }
 
         public virtual void ClearBasket()

@@ -9,7 +9,6 @@
 <h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText a Book </h3>
 
 <EditForm Model="b" OnValidSubmit="SaveBook">
-    <!--His is not red here...-->
 
     <DataAnnotationsValidator></DataAnnotationsValidator>
 
@@ -83,7 +82,7 @@
         }
     }
 
-    public void SaveProject()
+    public void SaveBook()
     {
         if (Id == 0)
         {
